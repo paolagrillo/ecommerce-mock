@@ -1,3 +1,5 @@
+
+
 import { products } from "../../../data/products";
 
 export default async function ProdottoDettaglio({ params }: { params: Promise<{ id: string }> }) {
