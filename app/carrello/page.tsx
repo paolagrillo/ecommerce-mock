@@ -1,5 +1,6 @@
 "use client";
 import { useCart } from "../context/CartContext";
+import Link from "next/link";
 
 export default function CarrelloPage() {
     const { items, removeFromCart, updateQuantity } = useCart();
@@ -11,7 +12,7 @@ if (items.length === 0) {
 
 return (
     <main className="p-4">
-        <h1 className="text-x1 font-bold mb-4">Il tuo carrello</h1>
+        <h1 className="text-xl font-bold mb-4">Il tuo carrello</h1>
 
 {items.map((item) => (
     <div key={item.id} className="flex items-center justify-between border-b py-2">
@@ -29,7 +30,12 @@ return (
     </div>
 ))}
 
-<p className="mt-4 font-bond">Totale: {totale.toFixed(2)} €</p>
+<p className="mt-4 font-bold">Totale: {totale.toFixed(2)} €</p>
+
+
+<Link href="/checkout" className="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded">Checkout</Link>
+
+
 
     </main>
 );
